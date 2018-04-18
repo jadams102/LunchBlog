@@ -35,7 +35,7 @@
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Experience.Name)
+                        <a asp-controller="Experiences" asp-action="Details" asp-route-id="@item.ExperienceId">@Html.DisplayFor(modelItem => item.Experience.Name)</a> 
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.PeopleId">Edit</a> |
