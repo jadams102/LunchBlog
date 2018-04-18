@@ -10,30 +10,33 @@
 <body>
 
 <div>
-    <h4>Location</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-    </dl>
+    <h2>
+        @Html.DisplayFor(model => model.Name)
+    </h2>
+    <hr />        
+    <h4>
+       Address: @Html.DisplayFor(model => model.Address)
+    </h4>
+    <h4>
+       Price: @Html.DisplayFor(model => model.Price)
+
+    </h4>
+   
 </div>
 <div>
+    <br />
+    <h5>Experiences</h5>
+    <ul>
+        @foreach (var exp in Model.Experiences)
+        {
+            <li>@Html.DisplayFor(modelItem => exp.Name) | @exp.Date.ToString("MM/dd/yyyy")
+        <a asp-controller="Experiences" asp-action="Details" asp-route-id="@exp.ExperienceId">Details</a></li>
+
+        }
+    </ul>
+    <a class="">@Html.ActionLink("Add Experience", "Create", "Experiences")</a>
+    <hr />
+
     <a asp-action="Edit" asp-route-id="@Model.LocationId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

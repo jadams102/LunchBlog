@@ -26,6 +26,13 @@ textarea {
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: auto;
+}
+
+.carousel-inner{
+    height: 600px;
 }
 
 /* Hide/rearrange for smaller screens */

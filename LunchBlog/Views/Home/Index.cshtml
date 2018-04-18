@@ -2,6 +2,53 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h2 class="btn btn-info btn-lg yo">@Html.ActionLink("Location", "Index", "Locations")</h2>
-<h2 class="btn btn-info btn-lg yo">@Html.ActionLink("Experience", "Index", "Experiences")</h2>
-<h2 class="btn btn-info btn-lg yo">@Html.ActionLink("People", "Index", "People")</h2>
+
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="https://images.unsplash.com/photo-1507412306066-2977c0e91a68?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aba7f52648017e9500343100cea8baee&auto=format&fit=crop&w=1400&q=80" alt="Sandwich Table">
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1512135479691-71087f6c117b?ixlib=rb-0.3.5&s=6301fe98cad7debacfba9dc3bff572c5&auto=format&fit=crop&w=1353&q=80" alt="Baked Goods">
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?ixlib=rb-0.3.5&s=729037d88652646e561a7105cbc34730&auto=format&fit=crop&w=1350&q=80" alt="Pretentious Breakfast">
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=02aef228d5a26e0bb9e284b7a604f61b&auto=format&fit=crop&w=1350&q=80" alt="Breakfast">
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af920b383b3a7b889beb1dd53998ecd3&auto=format&fit=crop&w=1352&q=80" alt="Burger">
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1350&q=80" alt="Meat Salad">
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1437750769465-301382cdf094?ixlib=rb-0.3.5&s=b8b3d45bc60a94da28bbf887b61c67fa&auto=format&fit=crop&w=1355&q=80" alt="Fruits">
+        </div>
+    </div>
+</div>
+
+<div align="center">
+    <h2 class="btn btn-info btn-lg">@Html.ActionLink("Location", "Index", "Locations")</h2>
+    <h2 class="btn btn-info btn-lg">@Html.ActionLink("Experience", "Index", "Experiences")</h2>
+    <h2 class="btn btn-info btn-lg">@Html.ActionLink("People", "Index", "People")</h2>
+</div>

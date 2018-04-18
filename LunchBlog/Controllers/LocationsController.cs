@@ -32,7 +32,7 @@ namespace LunchBlog.Controllers
                 return NotFound();
             }
 
-            var location = await _context.Locations
+            var location = await _context.Locations.Include(l => l.Experiences)
                 .SingleOrDefaultAsync(m => m.LocationId == id);
             if (location == null)
             {

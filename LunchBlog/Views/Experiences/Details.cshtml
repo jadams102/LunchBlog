@@ -10,39 +10,28 @@
 </head>
 <body>
 
-<div>
-    <h4>Experience</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Location.LocationId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ExperienceId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <h2>@Html.DisplayFor(model => model.Name)</h2>
+        <hr />
+        <p>@Html.DisplayFor(model => model.Description)</p>
+        <p>@Model.Date.ToString("MM/dd/yyyy") | <a asp-controller="Locations" asp-action="Details" asp-route-id="@Model.LocationId">@Html.DisplayFor(model => model.Location.Name)</a></p>           
+                
+                       
+                
+       
+    </div>
+    <h4>People</h4>
+    <ul>
+        @foreach (var ppl in Model.Peoples)
+        {
+            <li>@Html.DisplayFor(modelItem => ppl.Name) - <a asp-controller="People" asp-action="Details" asp-route-id="@ppl.PeopleId">Detail</a></li>
+
+        }
+    </ul>
+    <div>
+        <a asp-controller="People" asp-action="Create">Create a Person</a> |
+        <a asp-action="Edit" asp-route-id="@Model.ExperienceId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </body>
 </html>

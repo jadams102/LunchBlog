@@ -47,7 +47,7 @@ namespace LunchBlog.Controllers
         // GET: People/Create
         public IActionResult Create()
         {
-            ViewData["ExperienceId"] = new SelectList(_context.Experiences, "ExperienceId", "ExperienceId");
+            ViewData["ExperienceName"] = new SelectList(_context.Experiences, "ExperienceId", "Name");
             return View();
         }
 

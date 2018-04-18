@@ -35,19 +35,20 @@ namespace LunchBlog.Controllers
 
             var experience = await _context.Experiences
                 .Include(e => e.Location)
+                .Include(p => p.Peoples)
                 .SingleOrDefaultAsync(m => m.ExperienceId == id);
             if (experience == null)
             {
                 return NotFound();
             }
-
+            Console.WriteLine(experience);
             return View(experience);
         }
 
         // GET: Experiences/Create
         public IActionResult Create()
         {
-            ViewData["LocationId"] = new SelectList(_context.Locations, "LocationId", "LocationId");
+            ViewData["LocationName"] = new SelectList(_context.Locations, "LocationId", "Name");
             return View();
         }
 
